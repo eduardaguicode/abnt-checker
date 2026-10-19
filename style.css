@@ -1,0 +1,155 @@
+/* ---------- Variáveis: cores, fontes e medidas em um só lugar ---------- */
+:root {
+  --fundo: #FBFBFA;
+  --superficie: #FFFFFF;
+  --texto: #2F3437;
+  --texto-suave: #787774;
+  --borda: #EAEAEA;
+  --tinta: #111111;
+
+  --vermelho-fundo: #FDEBEC;  --vermelho-texto: #9F2F2D;
+  --azul-fundo: #E1F3FE;      --azul-texto: #1F6C9F;
+  --verde-fundo: #EDF3EC;     --verde-texto: #346538;
+  --amarelo-fundo: #FBF3DB;   --amarelo-texto: #956400;
+
+  --sans: 'SF Pro Display', 'Geist Sans', 'Helvetica Neue', 'Segoe UI', sans-serif;
+  --serif: 'Newsreader', 'Lyon Text', 'Instrument Serif', Georgia, serif;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+
+main, .topo, .rodape { max-width: 880px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+section { padding: 48px 0; }
+
+h1, h2, h3 { color: var(--tinta); margin: 0; }
+h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  max-width: 18ch;
+}
+h2 { font-family: var(--serif); font-weight: 500; font-size: 1.7rem; letter-spacing: -0.02em; line-height: 1.2; }
+h3 { font-size: 1rem; font-weight: 600; }
+
+/* Texto escondido visualmente, mas lido por leitores de tela */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Foco visível para quem navega pelo teclado */
+:focus-visible { outline: 2px solid var(--tinta); outline-offset: 3px; }
+
+/* ---------- Topo ---------- */
+.topo { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--borda); }
+.marca { font-weight: 600; color: var(--tinta); }
+
+/* ---------- Etiquetas (tags) ---------- */
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+.tag-verde { background: var(--verde-fundo); color: var(--verde-texto); }
+.tag-vermelho { background: var(--vermelho-fundo); color: var(--vermelho-texto); }
+.tag-amarelo { background: var(--amarelo-fundo); color: var(--amarelo-texto); }
+.tag-azul { background: var(--azul-fundo); color: var(--azul-texto); }
+
+/* ---------- Apresentação ---------- */
+.hero { padding-top: 96px; padding-bottom: 32px; }
+.lead { font-size: 1.15rem; color: var(--texto-suave); max-width: 52ch; margin: 24px 0 0; }
+
+/* ---------- Área de envio ---------- */
+.dropzone {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 48px 24px;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 200ms, border-color 200ms;
+}
+.dropzone:hover, .dropzone.arrastando { background: #F7F6F3; border-color: #D4D4D2; }
+.dropzone:focus-within { outline: 2px solid var(--tinta); outline-offset: 3px; }
+.icone { color: var(--tinta); }
+.dz-titulo { color: var(--tinta); font-weight: 500; overflow-wrap: anywhere; }
+.dz-ajuda { color: var(--texto-suave); font-size: 0.875rem; }
+
+.btn {
+  margin-top: 16px;
+  padding: 12px 24px;
+  background: var(--tinta);
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 200ms, transform 120ms;
+}
+.btn:hover:not(:disabled) { background: #333333; }
+.btn:active:not(:disabled) { transform: scale(0.98); }
+.btn:disabled { background: #C9C9C7; cursor: not-allowed; }
+
+.aviso { min-height: 1.6em; margin: 12px 0 0; font-size: 0.9rem; color: var(--texto-suave); }
+
+/* ---------- Resultado ---------- */
+.resultado { border-top: 1px solid var(--borda); }
+.resumo { color: var(--texto-suave); margin: 8px 0 24px; }
+.problemas { list-style: none; margin: 0; padding: 0; }
+.problema { padding: 20px 0; border-bottom: 1px solid var(--borda); }
+.problema-topo { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 4px; }
+.problema-regra { font-family: 'Geist Mono', 'SF Mono', 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--texto-suave); }
+.problema-msg { margin: 0; color: var(--tinta); }
+.problema-detalhe { margin: 4px 0 0; font-size: 0.9rem; color: var(--texto-suave); }
+
+/* ---------- Grade bento: cartões assimétricos ---------- */
+.bento { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.card { background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px; padding: 32px; }
+.card-largo { grid-column: 1 / -1; }
+.card p { margin: 8px 0 0; color: var(--texto-suave); }
+
+/* ---------- Perguntas frequentes ---------- */
+.faq h2 { margin-bottom: 16px; }
+details { border-bottom: 1px solid var(--borda); }
+summary {
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 18px 0; cursor: pointer; list-style: none; color: var(--tinta); font-weight: 500;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; font-weight: 400; font-size: 1.3rem; line-height: 1; }
+details[open] summary::after { content: '\2212'; } /* sinal de menos */
+details p { margin: 0 0 18px; color: var(--texto-suave); max-width: 60ch; }
+
+/* ---------- Rodapé ---------- */
+.rodape { padding-top: 32px; padding-bottom: 64px; color: var(--texto-suave); font-size: 0.85rem; }
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+  .bento { grid-template-columns: 1fr; }
+  .hero { padding-top: 56px; }
+  section { padding: 32px 0; }
+}
+
+/* ---------- Animação de entrada (só se a pessoa não pediu menos movimento) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal { opacity: 0; transform: translateY(12px); transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .js .reveal.visivel { opacity: 1; transform: none; }
+}

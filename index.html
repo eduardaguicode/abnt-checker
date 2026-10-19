@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verificador ABNT</title>
+  <meta name="description" content="Confira a formatação do seu trabalho acadêmico. O arquivo é lido no seu navegador e não é enviado a lugar nenhum.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topo: nome do projeto e uma etiqueta sobre privacidade -->
+  <header class="topo">
+    <span class="marca">Verificador ABNT</span>
+    <span class="tag tag-verde">Por Eduarda Guilherme</span>
+  </header>
+
+  <main>
+
+    <!-- Apresentação: o que o site faz, em uma frase -->
+    <section class="hero reveal">
+      <h1>Confira a formatação do seu trabalho antes de entregar.</h1>
+      <p class="lead">Envie um arquivo .docx e veja, regra por regra, o que está de acordo com a ABNT e o que merece ajuste.</p>
+    </section>
+
+    <!-- Envio do arquivo: a área de soltar e o botão de verificar -->
+    <section class="envio reveal" aria-labelledby="titulo-envio">
+      <h2 id="titulo-envio" class="sr-only">Enviar arquivo</h2>
+
+      <!-- O input fica dentro do label: clicar na área abre o seletor de arquivos -->
+      <label class="dropzone" id="dropzone">
+        <input type="file" id="arquivo" accept=".docx" class="sr-only">
+        <svg class="icone" viewBox="0 0 256 256" aria-hidden="true" width="28" height="28" fill="currentColor">
+          <path d="M240 136v64a16 16 0 0 1-16 16H32a16 16 0 0 1-16-16v-64a16 16 0 0 1 16-16h48a8 8 0 0 1 0 16H32v64h192v-64h-48a8 8 0 0 1 0-16h48a16 16 0 0 1 16 16ZM85.66 77.66 120 43.31V128a8 8 0 0 0 16 0V43.31l34.34 34.35a8 8 0 0 0 11.32-11.32l-48-48a8 8 0 0 0-11.32 0l-48 48a8 8 0 0 0 11.32 11.32Z"/>
+        </svg>
+        <span class="dz-titulo" id="dz-titulo">Arraste o arquivo aqui ou clique para escolher</span>
+        <span class="dz-ajuda">Apenas arquivos .docx</span>
+      </label>
+
+      <button class="btn" id="btn-verificar" type="button" disabled>Verificar documento</button>
+
+      <!-- Mensagens curtas para quem usa: erro de formato, modo demonstração etc. -->
+      <p class="aviso" id="aviso" role="status"></p>
+    </section>
+
+    <!-- Resultado: começa escondido e aparece depois da verificação -->
+    <section class="resultado" id="resultado" aria-live="polite" hidden>
+      <h2>Resultado</h2>
+      <p class="resumo" id="resumo"></p>
+      <ul class="problemas" id="lista-problemas"></ul>
+    </section>
+
+    <!-- Três cards assimétricos (grade "bento") -->
+    <section class="bento reveal" aria-label="Sobre o verificador">
+      <article class="card card-largo">
+        <h3>Seu arquivo fica com você</h3>
+        <p>A leitura acontece dentro do navegador. O documento não é enviado a nenhum servidor e não fica guardado depois que você fecha a página.</p>
+      </article>
+      <article class="card">
+        <h3>Regras com origem</h3>
+        <p>Cada ajuste indica a norma de referência pelo número, como a NBR 14724.</p>
+      </article>
+      <article class="card">
+        <h3>Começando pelo básico</h3>
+        <p>Fonte, tamanho, margens, espaçamento e alinhamento. Outras verificações virão depois.</p>
+      </article>
+    </section>
+
+    <!-- Perguntas frequentes: só linhas separadas por bordas finas -->
+    <section class="faq reveal" aria-labelledby="titulo-faq">
+      <h2 id="titulo-faq">Perguntas frequentes</h2>
+      <details>
+        <summary>Meu trabalho é enviado para algum lugar?</summary>
+        <p>Não. Toda a conferência roda no seu computador, dentro do navegador.</p>
+      </details>
+      <details>
+        <summary>Posso enviar um PDF?</summary>
+        <p>Ainda não. Por enquanto o site lê apenas arquivos .docx.</p>
+      </details>
+      <details>
+        <summary>O resultado substitui a avaliação do meu orientador?</summary>
+        <p>Não. O verificador aponta problemas de formatação visíveis. A decisão final é sempre da sua instituição.</p>
+      </details>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>As normas são citadas apenas pelo número. Consulte o texto oficial na ABNT.</p>
+  </footer>
+
+  <!-- O script fica aqui no fim para que os elementos acima já existam quando ele rodar -->
+  <script src="interface.js"></script>
+</body>
+</html>

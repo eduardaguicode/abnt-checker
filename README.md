@@ -12,14 +12,14 @@
 
 ## Ideação
 
-    Este projeto propõe a análise de documentos no que tange a conformidade às normas ABNT. A ideia principal é o retorno de feedbacks, não correções automáticas, mas esta característica pode ser evoluída com o passar do tempo. Das considerações iniciais:
+Este projeto propõe a análise de documentos no que tange a conformidade às normas ABNT. A ideia principal é o retorno de feedbacks, não correções automáticas, mas esta característica pode ser evoluída com o passar do tempo. Das considerações iniciais:
 
 - Este é um site estático, com a proposta de apenas rodar no Github Pages sem servidor.
 - Tive vontade de fazer um projeto em Python, por ser uma linguagem na qual eu já estava acostumada e trabalhando recentemente. No entanto, como o essencial seria ter um projeto que possa ser exibido e testado por outros usuários curiosos, tive que abrir mão do gosto pessoal e reaprender JavaScript para priorizar o ambiente de execução.
 
 ### Do uso de IA
 
-    Foi utilizado o Claude com abordagem de acompanhamento educativo neste projeto. Isto significa que utilizei a Inteligência Artificial para entender melhor o processo de desenvolvimento, e não apenas receber um produto pronto. Caso queira conferir, este foi o script que apliquei no projeto:
+Foi utilizado o Claude com abordagem de acompanhamento educativo neste projeto. Isto significa que utilizei a Inteligência Artificial para entender melhor o processo de desenvolvimento, e não apenas receber um produto pronto. Caso queira conferir, este foi o script que apliquei no projeto:
 
 ```markdown
 # Papel e objetivo
@@ -81,8 +81,8 @@ Na primeira interação, **não escreva código**. Faça um plano do projeto em 
 
 ### Por que usar o Git?
 
-    O Git é o sistema de controle de versões mais utilizado no mundo, extremamente relevante em qualquer situação real de participação em uma equipe de desenvolvimento de software. Embora um de seus maiores atrativos seja o facilitamento do trabalho em grandes equipes e este seja um simples projeto pessoal, é fulcral para qualquer desenvolvedor estar acostumado com suas funcionalidades para aplicação em futuros ambientes profissionais; o que que me incentivou a ter contato com a ferramenta no dado momento.
+O Git é o sistema de controle de versões mais utilizado no mundo, extremamente relevante em qualquer situação real de participação em uma equipe de desenvolvimento de software. Embora um de seus maiores atrativos seja o facilitamento do trabalho em grandes equipes e este seja um simples projeto pessoal, é fulcral para qualquer desenvolvedor estar acostumado com suas funcionalidades para aplicação em futuros ambientes profissionais; o que que me incentivou a ter contato com a ferramenta no dado momento.
 
 ## Esqueleto da página
 
-    Devo admitir que não possuo alguma inclinação a voltar a praticar HTML e CSS. Já tentei algumas vezes na era pré-IAs, e este se provou um trabalho desafiador. Por isto, deleguei a função de criar um front-end ao Claude, com total autonomia. Ainda assim, todo código gerado foi comentado e explicado didaticamente, para garantir que eu pelo menos sei o básico do que está acontecendo.
+Devo admitir que não possuo alguma inclinação a voltar a praticar HTML e CSS. Já tentei algumas vezes na era pré-IAs, e este se provou um trabalho desafiador. Por isto, deleguei a função de criar um front-end ao Claude, com total autonomia. Ainda assim, todo código gerado foi comentado e explicado didaticamente, para garantir que eu pelo menos sei o básico do que está acontecendo.
